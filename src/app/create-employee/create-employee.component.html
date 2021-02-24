@@ -1,0 +1,13 @@
+
+<form>
+    <div class="form-group">
+<input type='text' class="form-control" [(ngModel)]='firstName' placeholder='Name'[ngModelOptions]="{standalone: true}"/>
+<input type='number' class="form-control" [(ngModel)]='age' placeholder='Age' [ngModelOptions]="{standalone: true}"/>
+<input type='number'class="form-control"  [(ngModel)]='sapID' placeholder='SAP ID' [ngModelOptions]="{standalone: true}"/>
+<input type='email' class="form-control" [(ngModel)]='email' placeholder='Email' [ngModelOptions]="{standalone: true}"/>
+
+<input type='number'class="form-control"  [(ngModel)]='contact' placeholder='Contact' [ngModelOptions]="{standalone: true}"/>
+<input type='text' class="form-control" [(ngModel)]='location' placeholder='Location' [ngModelOptions]="{standalone: true}"/>
+
+<button class="btn btn-primary" (click)='AddData()' >Post Data</button>
+</div></form>

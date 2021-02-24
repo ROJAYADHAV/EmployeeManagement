@@ -1,0 +1,38 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>SAP ID</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userArray; let j=index">
+            <td>{{user.firstName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.sapID}}</td>
+            <td>{{user.contact}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="editData(template,user,j)">Edit</button>
+            <ng-template #template>
+                <div class="modal-body">
+                  <input type='text' [(ngModel)]='user.firstName' placeholder='Name'/>
+              <input type='number' [(ngModel)]='user.age' placeholder='Age'/>
+              <input type='number' [(ngModel)]='user.sapID' placeholder='SAP ID'/>
+              <input type='email' [(ngModel)]='user.email' placeholder='Email'/>
+              
+              <input type='number' [(ngModel)]='user.contact' placeholder='Contact'/>
+              <input type='text' [(ngModel)]='user.location' placeholder='Location'/>
+              
+              <button (click)='UpdateData(user)'>Update Data</button>
+              
+                </div>
+              </ng-template></td>
+            <td><button (click)='deleteData(user.id)'>DEL</button></td>
+       
+        </tr>
+    </tbody>
+</table>
